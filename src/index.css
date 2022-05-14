@@ -16,6 +16,10 @@ code {
     monospace;
 }
 
-.hello{
-    @apply underline;
+.App{
+    @apply container mx-auto mt-3 font-thin
+}
+
+.archive--icon{
+    @apply inline-block text-red-400;
 }
