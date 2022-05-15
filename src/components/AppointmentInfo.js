@@ -4,10 +4,12 @@ import {FaTrashAlt} from "react-icons/fa";
 
 // Receives appointment parameter, filters it out, and display the info in a section
 // destructuring method
-const AppointmentInfo = ({appointment}) => {
+const AppointmentInfo = ({appointment, onDeleteAppointment}) => {
     return (
         <li className="px-3 py-3 flex items-start ">
-            <button  type="button"
+            <button  type="button" onClick={() => {
+                onDeleteAppointment(appointment.id)
+            }}
                      className=" p-1.5 mr-1.5 mt-1 rounded text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 <FaTrashAlt className="bg-red-600"/></button>
             <div className="flex-grow">

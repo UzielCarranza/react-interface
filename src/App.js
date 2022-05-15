@@ -13,7 +13,9 @@ function App() {
     const FetchData = useCallback(() => {
         fetch('./data.json')
             .then(res => res.json())
-            .then(data => {setAppointmentList(data)}
+            .then(data => {
+                    setAppointmentList(data)
+                }
             );
     }, []);
 
@@ -33,7 +35,12 @@ function App() {
             <ul className="divide-y divide-gray-200">
                 {appointmentList.map(appointment => (
                     <AppointmentInfo key={appointment.id}
-                    appointment={appointment}
+                                     appointment={appointment}
+                                     onDeleteAppointment={appointmentId => {
+                                         setAppointmentList(appointmentList.filter(
+                                             appointment => appointment.id === appointmentId
+                                         ))
+                                     }}
                     />
                 ))}
 
