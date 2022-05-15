@@ -31,7 +31,7 @@ const DropDown = ({toggleSort}) => {
 }
 
 
-const Search = () => {
+const Search = ({query, onQueryChange}) => {
 
     let [toggleSort, setToggleSort] = useState(false);
     return (
@@ -41,7 +41,9 @@ const Search = () => {
                     <BiSearch/>
                     <label htmlFor="query-input" className="query"/>
                 </div>
-                <input type="text" name="query-input" id="query" value="" placeholder="Search" className="query-input"/>
+                <input type="text" name="query-input" id="query" value={query} placeholder="Search" className="query-input"
+                onChange={(event) => {onQueryChange(event.target.value)}}
+                />
                 <div className="container-button">
                     <div>
                         <button type="button" onClick={() => {
