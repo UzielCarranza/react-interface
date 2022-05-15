@@ -9,6 +9,8 @@ function App() {
     let [appointmentList, setAppointmentList] = useState([]);
     let [query, setQuery] = useState("");
 
+
+
     let [sortBy, setSortBy] = useState("petName")
     let [orderBy, setOrderBy] = useState("asc")
 
@@ -48,7 +50,10 @@ function App() {
     return (
         <div className="App-container">
             <h1 className="app-h1 mb-3"><BiCalendar className="archive--icon"/>Your Appointments</h1>
-            <AddAppointment/>
+            <AddAppointment
+                onSendAppointment={myAppointment => setAppointmentList([...appointmentList, myAppointment])}
+            lastId={appointmentList.reduce((max, item) => Number(item.id) > max ? Number(item.id) : max, 0)}
+            />
             <Search
                 query={query}
                 onQueryChange={myQuery => setQuery(myQuery)}
