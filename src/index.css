@@ -2,24 +2,47 @@
 @tailwind components;
 @tailwind base;
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.App-container{
+    @apply container mx-auto mt-3 font-thin;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app-h1{
+    @apply text-5xl;
 }
 
-.App{
-    @apply container mx-auto mt-3 font-thin
+.archive--icon {
+    @apply inline-block text-red-400 align-top;
 }
 
-.archive--icon{
-    @apply inline-block text-red-400;
+
+.container-app{
+    @apply py-5;
+}
+
+.wrapper-app {
+    @apply mt-1 relative rounded-md shadow-sm;
+}
+
+.search-icon {
+    @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none;
+}
+
+.query{
+    @apply sr-only;
+}
+
+.query-input {
+    @apply pl-8 rounded-md focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300;
+}
+
+.container-button {
+    @apply absolute inset-y-0 right-0 flex items-center;
+}
+
+.button-search {
+    @apply justify-center px-4 py-2 bg-blue-400 border-2 border-blue-400 text-sm text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center;
+}
+
+.down-arrow {
+    @apply ml-2;
 }

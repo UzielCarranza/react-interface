@@ -1,0 +1,1 @@
+set up program to utilize tailwind, react icons, components
